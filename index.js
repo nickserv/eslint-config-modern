@@ -231,7 +231,6 @@ module.exports = {
     "semi-style": "off",
     semi: "off",
     "sort-imports": "error",
-    "sort-keys": "error",
     "sort-vars": "error",
     "space-before-blocks": "off",
     "space-before-function-paren": "off",
