@@ -1,0 +1,19 @@
+{
+  "name": "eslint-config-modern",
+  "version": "1.0.0",
+  "author": "Nick McCurdy <nick@nickmccurdy.com> (https://nickmccurdy.com/)",
+  "license": "ISC",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "scripts": {
+    "test": "eslint . --config index.js --env node"
+  },
+  "devDependencies": {
+    "eslint": "^5.2.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 5"
+  }
+}
