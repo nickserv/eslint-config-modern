@@ -60,3 +60,4 @@ Some features are too dangerous or confusing to be worth using.
 - https://github.com/ericclemmons/eslint-config-future
 - https://github.com/thenativeweb/eslint-config-es
 - https://github.com/kukiron/eslint-config-latest
+- https://eslint.org/docs/user-guide/migrating-from-jscs
