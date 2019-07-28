@@ -19,7 +19,6 @@ module.exports = {
     "for-direction": "error",
     "func-name-matching": "error",
     "func-names": ["error", "as-needed"],
-    "func-style": "error",
     "getter-return": "error",
     "global-require": "error",
     "guard-for-in": "error",
