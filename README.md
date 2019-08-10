@@ -46,18 +46,13 @@ Some features are too dangerous or confusing to be worth using.
 - Avoid `void`, it's better to use `undefined` or break up multiple statements instead.
 - Avoid bitwise operators like `&` and `|`, they're usually confused with the `&&` and `||` (and/or) operators, and bitwise operations are not very performant or useful in JavaScript.
 
-## To review
+## Inspiration
 
-- https://github.com/airbnb/javascript
-- http://jshint.com/
-- https://standardjs.com/
 - https://github.com/eslint/eslint/blob/master/conf/eslint-recommended.js
-- https://github.com/walmartlabs/eslint-config-walmart/blob/master/docs/styleguide.md
-- https://github.com/FormidableLabs/eslint-config-formidable
-- https://jslint.com/
+- https://github.com/prettier/prettier
+- https://github.com/prettier/eslint-config-prettier
+- https://standardjs.com/
+- https://www.jslint.com/
+- https://github.com/ssoloff/eslint-config-crockford
+- https://github.com/airbnb/javascript
 - https://github.com/facebook/create-react-app/tree/master/packages/eslint-config-react-app
-- https://github.com/kunalgolani/eslint-config
-- https://github.com/ericclemmons/eslint-config-future
-- https://github.com/thenativeweb/eslint-config-es
-- https://github.com/kukiron/eslint-config-latest
-- https://eslint.org/docs/user-guide/migrating-from-jscs
