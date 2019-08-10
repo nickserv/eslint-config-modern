@@ -8,9 +8,6 @@
     "eslintconfig"
   ],
   "repository": "nickmccurdy/eslint-config-modern",
-  "scripts": {
-    "test": "eslint . --config index.js --env node"
-  },
   "devDependencies": {
     "eslint": "^6.1.0"
   },
