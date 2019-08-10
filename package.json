@@ -8,9 +8,6 @@
     "eslintconfig"
   ],
   "repository": "nickmccurdy/eslint-config-modern",
-  "devDependencies": {
-    "eslint": "^6.1.0"
-  },
   "peerDependencies": {
     "eslint": ">= 6.0.0"
   }
