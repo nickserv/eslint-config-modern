@@ -108,7 +108,7 @@ module.exports = {
     "no-self-compare": "error",
     "no-sequences": "error",
     "no-shadow-restricted-names": "error",
-    "no-shadow": "error",
+    "no-shadow": ["error", { "builtinGlobals": true, "hoist": "all" }],
     "no-sparse-arrays": "error",
     "no-sync": "error",
     "no-template-curly-in-string": "error",
