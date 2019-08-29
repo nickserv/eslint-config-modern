@@ -10,5 +10,6 @@
   "repository": "nickmccurdy/eslint-config-modern",
   "peerDependencies": {
     "eslint": ">= 6.0.0"
-  }
+  },
+  "prettier": {}
 }
