@@ -11,5 +11,7 @@
   "peerDependencies": {
     "eslint": ">= 6.0.0"
   },
-  "prettier": {}
+  "prettier": {
+    "quoteProps": "consistent"
+  }
 }
