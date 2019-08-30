@@ -2,7 +2,6 @@ module.exports = {
   rules: {
     "accessor-pairs": "error",
     "array-callback-return": "error",
-    "arrow-body-style": "error",
     "block-scoped-var": "error",
     "callback-return": "error",
     "camelcase": "error",
@@ -24,7 +23,6 @@ module.exports = {
     "id-blacklist": "error",
     "id-match": "error",
     "init-declarations": "error",
-    "linebreak-style": "error",
     "lines-between-class-members": "error",
     "max-statements-per-line": "error",
     "multiline-comment-style": "error",
@@ -143,7 +141,6 @@ module.exports = {
     "one-var": ["error", "never"],
     "operator-assignment": "error",
     "padding-line-between-statements": "error",
-    "prefer-arrow-callback": ["error", { allowUnboundThis: false }],
     "prefer-const": "error",
     "prefer-destructuring": "error",
     "prefer-named-capture-group": "error",
