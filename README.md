@@ -1,5 +1,25 @@
 # eslint-config-modern
 
+## Installation
+
+You can install ESLint using npm:
+
+    npm install eslint --save-dev
+
+Then install this configuration:
+
+    npm install eslint-config-modern --save-dev
+
+## Usage
+
+In your `.eslintrc` file, add:
+
+```json
+{
+  "extends": "modern"
+}
+```
+
 ## Guidelines
 
 ### Consistently format code with Prettier
