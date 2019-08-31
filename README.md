@@ -2,13 +2,15 @@
 
 ## Installation
 
-You can install ESLint using npm:
+You can install ESLint using npm or Yarn:
 
     npm install eslint --save-dev
+    yarn add eslint --dev
 
 Then install this configuration:
 
     npm install eslint-config-modern --save-dev
+    yarn add eslint --dev
 
 ## Usage
 
