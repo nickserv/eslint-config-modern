@@ -146,7 +146,6 @@ module.exports = {
     "prefer-destructuring": "error",
     "prefer-named-capture-group": "error",
     "prefer-numeric-literals": "error",
-    "prefer-object-spread": "error",
     "prefer-promise-reject-errors": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
