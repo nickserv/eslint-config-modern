@@ -1,7 +1,5 @@
 module.exports = {
-  env: {
-    es6: true
-  },
+  env: { es6: true },
   rules: {
     "accessor-pairs": "error",
     "array-callback-return": "error",
