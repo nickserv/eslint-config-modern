@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ".",
+  extends: "./es2016",
   env: {
     es2017: true // Same as ES2018 globals
   },

@@ -14,9 +14,9 @@ Then install this configuration:
 
 ## Usage
 
-Pick a configuration and add it to your `.eslintrc` file:
+Pick a configuration and add it to your `.eslintrc` file. Each configuration extends the previous to use newer features.
 
-### ES6/ES2015
+### ES2015 (ES6)
 
 This is the default configuration, which is recommended if you want the most compatibility or aren't sure what your environment supports.
 
@@ -26,9 +26,15 @@ This is the default configuration, which is recommended if you want the most com
 }
 ```
 
-### ES2018
+### ES2016
 
-This extends the default configuration to use newer features in ES2018.
+```json
+{
+  "extends": "modern/es2016"
+}
+```
+
+### ES2018
 
 ```json
 {

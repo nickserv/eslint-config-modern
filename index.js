@@ -99,6 +99,71 @@ module.exports = {
     "no-prototype-builtins": "error",
     "no-redeclare": "error",
     "no-regex-spaces": "error",
+    "no-restricted-globals": ["error", "isFinite", "isNaN"],
+    "no-restricted-properties": [
+      "error",
+      {
+        object: "arguments",
+        property: "callee",
+        message: "arguments.callee is deprecated"
+      },
+      {
+        object: "global",
+        property: "isFinite",
+        message: "Please use Number.isFinite instead"
+      },
+      {
+        object: "self",
+        property: "isFinite",
+        message: "Please use Number.isFinite instead"
+      },
+      {
+        object: "window",
+        property: "isFinite",
+        message: "Please use Number.isFinite instead"
+      },
+      {
+        object: "global",
+        property: "isNaN",
+        message: "Please use Number.isNaN instead"
+      },
+      {
+        object: "self",
+        property: "isNaN",
+        message: "Please use Number.isNaN instead"
+      },
+      {
+        object: "window",
+        property: "isNaN",
+        message: "Please use Number.isNaN instead"
+      },
+      {
+        property: "__defineGetter__",
+        message: "Please use Object.defineProperty instead."
+      },
+      {
+        property: "__defineSetter__",
+        message: "Please use Object.defineProperty instead."
+      }
+    ],
+    "no-restricted-syntax": [
+      "error",
+      {
+        selector: "ForInStatement",
+        message:
+          "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use for...of loops or Array methods."
+      },
+      {
+        selector: "LabeledStatement",
+        message:
+          "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+      },
+      {
+        selector: "WithStatement",
+        message:
+          "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+      }
+    ],
     "no-return-await": "error",
     "no-script-url": "error",
     "no-self-assign": "error",
