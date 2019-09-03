@@ -62,7 +62,7 @@ JavaScript has many problematic and difficult to understand syntax features that
 - Prefer `async`/`await` over `.then()` to use Promises.
 - Don't give `parseInt()` a radix, it properly defaults to 10 on modern browsers.
 - Don't assign `this` to a variable, use arrow functions or `.bind()` to avoid shadowing.
-- Use `"strict mode"` in all files. Note that it's enabled automatically in ES modules, you only need it at the top of files that don't use `import` or `export`.
+- Use strict mode in all files. Note that it's enabled automatically in ES modules, you only need `"use strict"` at the top of files that don't use `import` or `export`.
 - Use `===` and `!==` instead of `==` and `!=`.
 - Use `fetch` or a third party library to make requests in browsers instead of `XMLHTTPRequest`. `node-fetch` is a good third party alternative for Node.
 
