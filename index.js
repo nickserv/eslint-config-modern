@@ -9,7 +9,7 @@ module.exports = {
     "class-methods-use-this": "error",
     "complexity": "error",
     "consistent-return": "error",
-    "consistent-this": "error",
+    "consistent-this": ["error", "placeholder for invalid variable name"],
     "constructor-super": "error",
     "default-case": "error",
     "dot-notation": "error",
@@ -99,7 +99,7 @@ module.exports = {
     "no-prototype-builtins": "error",
     "no-redeclare": "error",
     "no-regex-spaces": "error",
-    "no-restricted-globals": ["error", "isFinite", "isNaN"],
+    "no-restricted-globals": ["error", "isFinite", "isNaN", "XMLHttpRequest"],
     "no-restricted-properties": [
       "error",
       {

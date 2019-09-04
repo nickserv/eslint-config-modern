@@ -34,6 +34,14 @@ This is the default configuration, which is recommended if you want the most com
 }
 ```
 
+### ES2017
+
+```json
+{
+  "extends": "modern/es2017"
+}
+```
+
 ### ES2018
 
 ```json
