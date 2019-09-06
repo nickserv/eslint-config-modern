@@ -1,8 +1,6 @@
 module.exports = {
   extends: ".",
-  parserOptions: {
-    ecmaVersion: 7 // Same as ES2016 syntax
-  },
+  parserOptions: { ecmaVersion: 7 },
   rules: {
     "no-restricted-properties": [
       "error",

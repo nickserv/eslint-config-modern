@@ -1,7 +1,5 @@
 module.exports = {
   extends: "./es2017",
-  parserOptions: {
-    ecmaVersion: 9 // Same as ES2018 syntax
-  },
+  parserOptions: { ecmaVersion: 9 },
   rules: { "prefer-object-spread": "error" }
 };
