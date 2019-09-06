@@ -50,6 +50,14 @@ This is the default configuration, which is recommended if you want the most com
 }
 ```
 
+### ES2019
+
+```json
+{
+  "extends": "modern/es2019"
+}
+```
+
 ## Guidelines
 
 ### Consistently format code with Prettier

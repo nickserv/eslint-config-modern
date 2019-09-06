@@ -189,7 +189,7 @@ module.exports = {
       { allowShortCircuit: true, allowTernary: true }
     ],
     "no-unused-labels": "error",
-    "no-unused-vars": ["error", { args: "all", caughtErrors: "all" }],
+    "no-unused-vars": ["error", { args: "all" }],
     "no-use-before-define": ["error", "nofunc"],
     "no-useless-call": "error",
     "no-useless-catch": "error",
