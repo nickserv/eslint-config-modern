@@ -38,7 +38,6 @@ module.exports = {
     "no-class-assign": "error",
     "no-compare-neg-zero": "error",
     "no-cond-assign": "error",
-    "no-confusing-arrow": ["error", { allowParens: false }],
     "no-const-assign": "error",
     "no-constant-condition": "error",
     "no-continue": "error",
