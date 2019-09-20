@@ -86,7 +86,7 @@ JavaScript has many problematic and difficult to understand syntax features that
 
 Some features have potentially dangerous or confusing usages and can be improved with care.
 
-- Use `null` instead of `undefined`, unless you're comparing an existing value `undefined` value.
+- Use `null` instead of `undefined`, unless you're comparing with an existing `undefined` value.
 - Use break/return/throw for every `case` in `switch`.
 - Don't extend or reassign built in types and values.
 - Prefer standard APIs over third party packages when you can get equivalent functionality.
