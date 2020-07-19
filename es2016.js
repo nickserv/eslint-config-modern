@@ -7,8 +7,8 @@ module.exports = {
       {
         object: "Math",
         property: "pow",
-        message: "Use the exponentiation operator (**) instead."
-      }
-    ]
-  }
+        message: "Use the exponentiation operator (**) instead.",
+      },
+    ],
+  },
 };

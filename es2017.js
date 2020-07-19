@@ -4,7 +4,7 @@ module.exports = {
   rules: {
     "no-restricted-properties": [
       "error",
-      { property: "then", message: "Please use async/await instead." }
-    ]
-  }
+      { property: "then", message: "Please use async/await instead." },
+    ],
+  },
 };

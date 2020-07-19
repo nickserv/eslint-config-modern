@@ -16,7 +16,7 @@ module.exports = {
     "for-direction": "error",
     "func-name-matching": [
       "error",
-      { considerPropertyDescriptor: true, includeCommonJSModuleExports: true }
+      { considerPropertyDescriptor: true, includeCommonJSModuleExports: true },
     ],
     "func-names": "error",
     "getter-return": "error",
@@ -79,7 +79,7 @@ module.exports = {
     "no-loop-func": "error",
     "no-magic-numbers": [
       "error",
-      { ignoreArrayIndexes: true, enforceConst: true }
+      { ignoreArrayIndexes: true, enforceConst: true },
     ],
     "no-misleading-character-class": "error",
     "no-multi-assign": "error",
@@ -106,71 +106,71 @@ module.exports = {
       "event",
       "isFinite",
       "isNaN",
-      "XMLHttpRequest"
+      "XMLHttpRequest",
     ],
     "no-restricted-properties": [
       "error",
       {
         object: "arguments",
         property: "callee",
-        message: "arguments.callee is deprecated"
+        message: "arguments.callee is deprecated",
       },
       {
         object: "global",
         property: "isFinite",
-        message: "Please use Number.isFinite instead"
+        message: "Please use Number.isFinite instead",
       },
       {
         object: "self",
         property: "isFinite",
-        message: "Please use Number.isFinite instead"
+        message: "Please use Number.isFinite instead",
       },
       {
         object: "window",
         property: "isFinite",
-        message: "Please use Number.isFinite instead"
+        message: "Please use Number.isFinite instead",
       },
       {
         object: "global",
         property: "isNaN",
-        message: "Please use Number.isNaN instead"
+        message: "Please use Number.isNaN instead",
       },
       {
         object: "self",
         property: "isNaN",
-        message: "Please use Number.isNaN instead"
+        message: "Please use Number.isNaN instead",
       },
       {
         object: "window",
         property: "isNaN",
-        message: "Please use Number.isNaN instead"
+        message: "Please use Number.isNaN instead",
       },
       {
         property: "__defineGetter__",
-        message: "Please use Object.defineProperty instead."
+        message: "Please use Object.defineProperty instead.",
       },
       {
         property: "__defineSetter__",
-        message: "Please use Object.defineProperty instead."
-      }
+        message: "Please use Object.defineProperty instead.",
+      },
     ],
     "no-restricted-syntax": [
       "error",
       {
         selector: "ForInStatement",
         message:
-          "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use for...of loops or Array methods."
+          "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use for...of loops or Array methods.",
       },
       {
         selector: "LabeledStatement",
         message:
-          "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+          "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
       },
       {
         selector: "WithStatement",
         message:
-          "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
-      }
+          "`with` is disallowed in strict mode because it makes code impossible to predict and optimize.",
+      },
     ],
     "no-return-assign": "error",
     "no-return-await": "error",
@@ -195,7 +195,7 @@ module.exports = {
     "no-unsafe-negation": "error",
     "no-unused-expressions": [
       "error",
-      { allowShortCircuit: true, allowTernary: true }
+      { allowShortCircuit: true, allowTernary: true },
     ],
     "no-unused-labels": "error",
     "no-unused-vars": ["error", { args: "all", ignoreRestSiblings: true }],
@@ -215,7 +215,7 @@ module.exports = {
     "object-shorthand": [
       "error",
       "always",
-      { avoidExplicitReturnArrows: true }
+      { avoidExplicitReturnArrows: true },
     ],
     "one-var": ["error", "never"],
     "operator-assignment": "error",
@@ -238,6 +238,6 @@ module.exports = {
     "use-isnan": "error",
     "valid-typeof": ["error", { requireStringLiterals: true }],
     "vars-on-top": "error",
-    "yoda": "error"
-  }
+    "yoda": "error",
+  },
 };
