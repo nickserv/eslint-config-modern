@@ -4,7 +4,6 @@ module.exports = {
   rules: {
     "accessor-pairs": "error",
     "array-callback-return": "error",
-    "block-scoped-var": "error",
     "callback-return": "error",
     "camelcase": "error",
     "class-methods-use-this": "error",
@@ -22,7 +21,6 @@ module.exports = {
     "func-names": "error",
     "getter-return": "error",
     "global-require": "error",
-    "guard-for-in": "error",
     "handle-callback-err": ["error", "^(err|error)$"],
     "init-declarations": "error",
     "lines-between-class-members": "error",
