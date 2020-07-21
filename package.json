@@ -9,8 +9,20 @@
     "eslintconfig"
   ],
   "repository": "nickmccurdy/eslint-config-modern",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "6.2.0"
+  },
   "peerDependencies": {
     "eslint": ">= 6.2.0"
+  },
+  "eslintConfig": {
+    "extends": ".",
+    "env": {
+      "node": true
+    }
   },
   "prettier": {
     "quoteProps": "consistent"
