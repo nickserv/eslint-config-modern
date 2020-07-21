@@ -1,5 +1,7 @@
 # eslint-config-modern
 
+ESLint configuration for modern JavaScript that improves code quality by removing bad features and preventing anti-patterns
+
 ## Installation
 
 You can install ESLint using npm or Yarn:
