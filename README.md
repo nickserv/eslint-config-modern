@@ -79,6 +79,18 @@ Some features are too dangerous or confusing to be worth using.
 - Avoid `with`, manually read properties or use destructuring instead.
 - Avoid `void`, it's better to use `undefined` or break up multiple statements instead.
 - Avoid bitwise operators like `&` and `|`, they're usually confused with the `&&` and `||` (and/or) operators, and bitwise operations are not very performant or useful in JavaScript.
+- Avoid `arguments`
+- Avoid labels
+
+### Follow best practices
+
+- acessor-pairs Always define a getter for each setter
+- array-callback-return Return values in Array methods
+- class-methods-use-this Always use `this` in class methods
+- consistent-return
+- default-case Always provide a `default` in `case` as a fallback
+- dot notation Avoid using `[]` unnecessary when indexing
+- max-classes-per-file Use one class per file
 
 ## Inspiration
 
