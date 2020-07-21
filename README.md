@@ -22,6 +22,16 @@ In your `.eslintrc` file, add:
 }
 ```
 
+## Environment support
+
+### Browsers
+
+This config uses features from ES6/ES2015 to ES2019 which are supported by Chrome, Firefox, and Safari. Legacy browsers like Internet Explorer require build tools like https://babeljs.io/docs/en/babel-preset-env.
+
+### Node
+
+It's assumed that you're using a supported version of Node (see [release schedule](https://github.com/nodejs/Release#release-schedule)).
+
 ## Guidelines
 
 ### Consistently format code with Prettier
