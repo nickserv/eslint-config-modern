@@ -22,6 +22,9 @@
     "extends": ".",
     "env": {
       "node": true
+    },
+    "rules": {
+      "sort-keys": "error"
     }
   },
   "prettier": {
