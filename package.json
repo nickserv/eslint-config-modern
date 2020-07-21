@@ -10,7 +10,7 @@
   ],
   "repository": "nickmccurdy/eslint-config-modern",
   "peerDependencies": {
-    "eslint": ">= 6.0.0"
+    "eslint": ">= 6.2.0"
   },
   "prettier": {
     "quoteProps": "consistent"

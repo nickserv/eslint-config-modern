@@ -1,5 +1,6 @@
 module.exports = {
-  env: { es6: true },
+  env: { es2017: true },
+  parserOptions: { ecmaVersion: 10 },
   rules: {
     "accessor-pairs": "error",
     "array-callback-return": "error",
@@ -153,6 +154,15 @@ module.exports = {
         property: "__defineSetter__",
         message: "Please use Object.defineProperty instead.",
       },
+      {
+        object: "Math",
+        property: "pow",
+        message: "Please use the exponentiation operator (**) instead.",
+      },
+      {
+        property: "then",
+        message: "Please use async/await instead.",
+      },
     ],
     "no-restricted-syntax": [
       "error",
@@ -198,7 +208,10 @@ module.exports = {
       { allowShortCircuit: true, allowTernary: true },
     ],
     "no-unused-labels": "error",
-    "no-unused-vars": ["error", { args: "all", ignoreRestSiblings: true }],
+    "no-unused-vars": [
+      "error",
+      { args: "all", ignoreRestSiblings: true, caughtErrors: "all" },
+    ],
     "no-use-before-define": "error",
     "no-useless-call": "error",
     "no-useless-catch": "error",
@@ -224,6 +237,7 @@ module.exports = {
     "prefer-destructuring": "error",
     "prefer-named-capture-group": "error",
     "prefer-numeric-literals": "error",
+    "prefer-object-spread": "error",
     "prefer-promise-reject-errors": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
