@@ -44,12 +44,85 @@ It's assumed that you're using a supported version of Node (see [release schedul
 
 JavaScript has many problematic and difficult to understand syntax features that have been replaced by newer features. Migrating to new features can drastically improve the readability, safety, and consistency of JavaScript.
 
-- Use ES classes with `class` instead of constructor functions with `function`.
-- Use ES modules (CJS is fine for Node) instead of globals.
-- Replace `var` with `const` if you don't need to reassign the variable, and `let` if you do.
+#### Replace constructor functions with classes
+
+```js
+// bad
+function Animal() {}
+Animal.prototype.speak = function () {
+  return this;
+};
+
+// good
+class Animal {
+  speak() {
+    return this;
+  }
+}
+```
+
+#### Replace globals with ES/CJS modules
+
+The ES module standard makes it easy to safely reuse JavaScript code across files without leaking into the global scope, and enables useful tooling features like tree shaking and loaders. CJS modules can also be used with Node, though they're not as analyzable and flexible with build tools.
+
+```js
+// bad
+window.greeting = "Hello, world!";
+
+// good (ES)
+export const greeting = "Hello, world!";
+
+// good (CJS)
+exports.greeting = "Hello, world!";
+```
+
+#### Replace `var` with `let`/`const`
+
+Variables created with `var` are hoisted to the nearest function, which can cause confusing behavior with the order of accessing variables and variables overriding each other in nearby scopes. `let` and `const` replace `var` with more predictable block scoping (typical with other programming languages). `const` should be preferred if you don't need to reassign the variable, otherwise use `let`.
+
+```js
+// bad
+var greeting = "Hello, world!";
+var enabled = true;
+enabled = false;
+
+// good
+const greeting = "Hello, world!";
+let enabled = true;
+enabled = false;
+```
+
+#### Replace string concatenation with template literals
+
+`+` can have ambiguous behavior if it's used between strings and numbers interchangeably. To avoid bugs and unwanted formatting, it's better to use template literal syntax (which also allows for custom templates) for strings and exclusively use `+` for math.
+
+```js
+// bad
+const name = "world";
+console.log("Hello, " + name + "!");
+
+// good
+const name = "world";
+console.log(`Hello, ${name}!`);
+```
+
+#### Replace the `arguments` keyword with spread arguments
+
+`arguments` used to be the only way to get a variable number of arguments from a function dynamically, but it isn't supported in arrow functions and confusingly is not an actual Array object. The spread argument (`...`) solves this issue and works with both `function` and arrow functions.
+
+```js
+// bad
+function joinWords() {
+  return Array.from(arguments).join(" ");
+}
+
+// good
+function joinWords(...args) {
+  return args.join(" ");
+}
+```
+
 - Replace `for (const i = 0; i < array.length; i++)` and `for (const value in array)` with `for (const value of array)`.
-- Only use `` for string concatenation and + for addition.
-- Use spread arguments like `...args` instead of `arguments`.
 - Prefer Promises over callbacks when using async errors.
 - Prefer `async`/`await` over `.then()` to use Promises.
 - Don't give `parseInt()` a radix, it properly defaults to 10 on modern browsers.
