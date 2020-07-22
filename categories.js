@@ -9,4 +9,14 @@ const rulesByCategory = groupBy(
   (rule) => allRules.get(rule).meta.docs.category
 );
 
-console.log(rulesByCategory);
+console.log(
+  Object.entries(rulesByCategory)
+    .map(([category, categoryRules]) =>
+      [
+        `${category} (${categoryRules.length})`,
+        ...categoryRules.map((rule) => `- ${rule}`),
+      ].join("\n")
+    )
+    .concat(`Total (${Object.keys(rules).length})`)
+    .join("\n\n")
+);
