@@ -76,7 +76,7 @@ export const greeting = "Hello, world!";
 exports.greeting = "Hello, world!";
 ```
 
-#### Replace `var` with `let`/`const`
+#### Replace `var` with `let`/`const` (`no-const-assign`, `no-var`, `prefer-const`)
 
 Variables created with `var` are hoisted to the nearest function, which can cause confusing behavior with the order of accessing variables and variables overriding each other in nearby scopes. `let` and `const` replace `var` with more predictable block scoping (typical with other programming languages). `const` should be preferred if you don't need to reassign the variable, otherwise use `let`.
 
