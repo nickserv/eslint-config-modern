@@ -24,17 +24,27 @@ function getRulesByCategory() {
 (async () => {
   const documentedRules = await getDocumentedRules();
 
+  function countDocumentedRules(rules) {
+    return rules.filter((rule) => documentedRules.includes(rule)).length;
+  }
+
   console.log(
     Object.entries(getRulesByCategory())
       .map(([category, categoryRules]) =>
         [
-          `${category} (${categoryRules.length})`,
+          `${category} (${countDocumentedRules(categoryRules)}/${
+            categoryRules.length
+          })`,
           ...categoryRules.map(
             (rule) => `${documentedRules.includes(rule) ? "✓" : "✖"} ${rule}`
           ),
         ].join("\n")
       )
-      .concat(`Total (${Object.keys(config.rules).length})`)
+      .concat(
+        `Total (${countDocumentedRules(Object.keys(config.rules))}/${
+          Object.keys(config.rules).length
+        })`
+      )
       .join("\n\n")
   );
 })();
