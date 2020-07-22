@@ -13,7 +13,8 @@
     "test": "eslint ."
   },
   "devDependencies": {
-    "eslint": "6.2.0"
+    "eslint": "6.2.0",
+    "lodash": "^4.17.19"
   },
   "peerDependencies": {
     "eslint": ">= 6.2.0"
