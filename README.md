@@ -92,6 +92,34 @@ let enabled = true;
 enabled = false;
 ```
 
+#### Use iteration with `for`
+
+C-style `for` loops are often unnecessarily complicated and error prone for basic iteration. `for...of` can replace it in most cases, and in other cases you should prefer other iteration operators or methods.
+
+```js
+// bad
+for (const i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
+
+// good
+for (const value of array) {
+  console.log(value);
+}
+```
+
+#### Replace `for...in` with `for...of`
+
+Unfortunately `for...in` loops include the entire prototype chain, not just iterable items in an object. This can cause confusing behavior, like logging methods of a custom array type when you only want to log array items. `for...of` is similar, but it uses iterators to only loop over iterable items.
+
+```js
+// bad
+for (const value in array)
+
+// good
+for (const value of array)
+```
+
 #### Replace string concatenation with template literals
 
 `+` can have ambiguous behavior if it's used between strings and numbers interchangeably. To avoid bugs and unwanted formatting, it's better to use template literal syntax (which also allows for custom templates) for strings and exclusively use `+` for math.
@@ -122,14 +150,107 @@ function joinWords(...args) {
 }
 ```
 
-- Replace `for (const i = 0; i < array.length; i++)` and `for (const value in array)` with `for (const value of array)`.
-- Prefer Promises over callbacks when using async errors.
-- Prefer `async`/`await` over `.then()` to use Promises.
-- Don't give `parseInt()` a radix, it properly defaults to 10 on modern browsers.
-- Don't assign `this` to a variable, use arrow functions or `.bind()` to avoid shadowing.
-- Use strict mode in all files. Note that it's enabled automatically in ES modules, you only need `"use strict"` at the top of files that don't use `import` or `export`.
-- Use `===` and `!==` instead of `==` and `!=`.
-- Use `fetch` or a third party library to make requests in browsers instead of `XMLHTTPRequest`. `node-fetch` is a good third party alternative for Node.
+#### Prefer Promises over callbacks when using async errors
+
+Originally, callbacks were the only basic primitive for asyncronous operations in JavaScript. However, chaining together asyncronous operations with multiple callbacks can often result in messy indentation. Callbacks also don't necessarily have consistent error handling, making error handling logic repetitive and easy to misuse. Promises on the other hand are objects that represent a future value, running listeners when complete. This makes asyncronous data processing and error handling easier and less error-prone.
+
+```js
+// bad
+function getFirstResult(callback) {
+  getResults((error, results) {
+    if (error) {
+      callback(error)
+    } else {
+      callback(null,results[0])
+    }
+  })
+}
+
+// good
+async function getFirstResult() {
+  const results = await getResults()
+  return results[0]
+}
+```
+
+#### Prefer `async`/`await` over `.then()` to use Promises
+
+`async` functions allow for more convenient usage of Promise values without manually nesting or chaining Promises. Instead of using `.then()` to wait for a Promise to resolve and `.catch()` to handle errors, use the Promise in an `async` function with `await` with an ordinary `try`/`catch` clause for error handling (each Promise chain should have at least one handler).
+
+```js
+// bad
+function getExample() {
+  return fetch("https://example.com")
+    .then((response) => response.text())
+    .catch((error) => console.error(error));
+}
+
+// good
+async function getExample() {
+  try {
+    const response = await fetch("https://example.com");
+    return response.text();
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+#### Use `parseInt()` without a radix for base 10
+
+Modern JavaScript specs require the radix/base of integer parsing to always be 10, so defensively passing `10` as the second argument is no longer necessary.
+
+```js
+// bad
+const integer = parseInt(string, 10);
+
+// good
+const integer = parseInt(string);
+```
+
+#### Don't assign `this` to a variable, use arrow functions or `.bind()` to avoid shadowing
+
+```js
+// bad
+const that = this;
+const processedItems = items.map(function (item) {
+  return that.processItem(item);
+});
+
+// good
+const processedItems = items.map((item) => this.processItem(item));
+```
+
+#### Use strict mode in all files
+
+Strict mode is automatically enabled in ES modules, so you only need `"use strict"` at the top of files that don't use `import` or `export`.
+
+```js
+// bad
+console.log("Hello, world!");
+
+// good file
+import greeting from "./greeting"; // or if you don't have imports/exports, use "use-strict" on the first line
+console.log(greeting);
+```
+
+#### Use `===` and `!==` instead of `==` and `!=`
+
+JavaScript's default comparison operators (`==` and `!=`) can compare different types of primitives, leading to confusion behavior and bugs from unexpected types and other coercion issues. It's better to explicitly use `===` and `!==`, which check to see if values are equivalent and of the same type.
+
+```js
+// bad
+nameOrId == 1;
+
+// good
+nameOrId === 1;
+```
+
+#### Use `fetch` instead of `XMLHTTPRequest`
+
+`XMLHTTPRequest` is a fairly old API for making HTTP/AJAX requests in browsers. It relies on multiple events and callbacks, making it more difficult to learn and harder to reuse. `fetch` is a more modern alternative that's entirely based on Promises, and therefore has better data management and error handling (see above).
+
+If you're using Node instead of a browser, we recommend `node-fetch` as Node's built in HTTP client is also fairly complex. If you have isomorphic code that runs both in Node and a browser, you can use `isomorphic-fetch` to switch between the two automatically.
 
 ### Improve semantics
 
