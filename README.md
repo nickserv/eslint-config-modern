@@ -12,7 +12,7 @@ You can install ESLint using npm or Yarn:
 Then install this configuration:
 
     npm install eslint-config-modern --save-dev
-    yarn add eslint --dev
+    yarn add eslint-config-modern --dev
 
 ## Usage
 
