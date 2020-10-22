@@ -207,7 +207,7 @@ module.exports = {
     "no-unused-labels": "error",
     "no-unused-vars": [
       "error",
-      { args: "all", caughtErrors: "all", ignoreRestSiblings: true },
+      { args: "after-used", caughtErrors: "all", ignoreRestSiblings: true },
     ],
     "no-use-before-define": "error",
     "no-useless-call": "error",
