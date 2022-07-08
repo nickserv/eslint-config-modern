@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 module.exports = {
   env: { es2017: true },
@@ -251,4 +251,4 @@ module.exports = {
     "vars-on-top": "error",
     "yoda": "error",
   },
-};
+}
