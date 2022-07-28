@@ -2,7 +2,7 @@
 
 module.exports = {
   env: { es2017: true },
-  parserOptions: { ecmaVersion: 10 },
+  parserOptions: { ecmaVersion: 10, sourceType: "module" },
   rules: {
     "accessor-pairs": "error",
     "array-callback-return": "error",

@@ -25,6 +25,9 @@
     "env": {
       "node": true
     },
+    "parserOptions": {
+      "sourceType": "script"
+    },
     "rules": {
       "sort-keys": "error"
     }

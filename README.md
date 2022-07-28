@@ -45,7 +45,7 @@ It's assumed that you're using a supported version of Node (see [release schedul
 JavaScript has many problematic and difficult to understand syntax features that have been replaced by newer features. Migrating to new features can drastically improve the readability, safety, and consistency of JavaScript.
 
 - Use ES classes with `class` instead of constructor functions with `function`.
-- Use ES modules (CJS is fine for Node) instead of globals.
+- Use ES modules instead of globals or `"use strict"`.
 - Replace `var` with `const` if you don't need to reassign the variable, and `let` if you do.
 - Replace `for (const i = 0; i < array.length; i++)` and `for (const value in array)` with `for (const value of array)`.
 - Only use `` for string concatenation and + for addition.
@@ -54,7 +54,6 @@ JavaScript has many problematic and difficult to understand syntax features that
 - Prefer `async`/`await` over `.then()` to use Promises.
 - Don't give `parseInt()` a radix, it properly defaults to 10 on modern browsers.
 - Don't assign `this` to a variable, use arrow functions or `.bind()` to avoid shadowing.
-- Use strict mode in all files. Note that it's enabled automatically in ES modules, you only need `"use strict"` at the top of files that don't use `import` or `export`.
 - Use `===` and `!==` instead of `==` and `!=`.
 - Use `fetch` or a third party library to make requests in browsers instead of `XMLHTTPRequest`. `undici` is a good alternative for Node.
 
