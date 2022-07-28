@@ -8,6 +8,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12, 14, 16, 18]
+        eslint-version: [6, 7, 8]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -15,6 +16,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
       - run: yarn --frozen-lockfile
+      - run: yarn add --dev eslint@${{ matrix.eslint-version }}
       - run: yarn test
 
   format:
