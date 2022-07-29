@@ -6,22 +6,30 @@ ESLint configuration for modern JavaScript that improves code quality by removin
 
 You can install ESLint using npm or Yarn:
 
-    npm install eslint --save-dev
-    yarn add eslint --dev
+```
+npm install eslint --save-dev
+```
+
+```
+yarn add eslint --dev
+```
 
 Then install this configuration:
 
-    npm install eslint-config-modern --save-dev
-    yarn add eslint-config-modern --dev
+```
+npm install eslint-config-modern --save-dev
+```
+
+```
+yarn add eslint-config-modern --dev
+```
 
 ## Usage
 
 In your `.eslintrc` file, add:
 
 ```json
-{
-  "extends": "modern"
-}
+"extends": "modern"
 ```
 
 ## Environment support
