@@ -40,6 +40,7 @@ This config uses features from ES6/ES2015 to ES2019 which are supported in the f
 - Firefox
 - Safari
 - Node.js 12.17.0+
+- TypeScript 2.7+
 
 ## Guidelines
 
