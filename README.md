@@ -75,7 +75,7 @@ class Animal {
 }
 ```
 
-#### Replace globals and CJS modules with ES modules
+#### Replace globals and CJS modules with ES modules (`no-implicit-globals`)
 
 The ES module standard makes it easy to safely reuse JavaScript code across files without leaking into the global scope, and enables useful tooling features like tree shaking and loaders.
 
@@ -122,7 +122,7 @@ for (const value of array) {
 }
 ```
 
-#### Replace `for...in` with `for...of`
+#### Replace `for...in` with `for...of` (`no-restricted-syntax`)
 
 Unfortunately `for...in` loops include the entire prototype chain, not just iterable items in an object. This can cause confusing behavior, like logging methods of a custom array type when you only want to log array items. `for...of` is similar, but it uses iterators to only loop over iterable items.
 
@@ -134,7 +134,7 @@ for (const value in array)
 for (const value of array)
 ```
 
-#### Replace string concatenation with template literals
+#### Replace string concatenation with template literals (`prefer-template`)
 
 `+` can have ambiguous behavior if it's used between strings and numbers interchangeably. To avoid bugs and unwanted formatting, it's better to use template literal syntax (which also allows for custom templates) for strings and exclusively use `+` for math.
 
@@ -148,7 +148,7 @@ const name = "world"
 console.log(`Hello, ${name}!`)
 ```
 
-#### Replace the `arguments` keyword with spread arguments
+#### Replace the `arguments` keyword with spread arguments (`prefer-rest-params`)
 
 `arguments` used to be the only way to get a variable number of arguments from a function dynamically, but it isn't supported in arrow functions and confusingly is not an actual Array object. The spread argument (`...`) solves this issue and works with both `function` and arrow functions.
 
@@ -187,7 +187,7 @@ async function getFirstResult() {
 }
 ```
 
-#### Prefer `async`/`await` over `.then()` to use Promises
+#### Prefer `async`/`await` over `.then()` to use Promises (`no-restricted-properties`)
 
 `async` functions allow for more convenient usage of Promise values without manually nesting or chaining Promises. Instead of using `.then()` to wait for a Promise to resolve and `.catch()` to handle errors, use the Promise in an `async` function with `await` with an ordinary `try`/`catch` clause for error handling (each Promise chain should have at least one handler).
 
@@ -222,7 +222,7 @@ const integer = parseInt(string, 10)
 const integer = parseInt(string)
 ```
 
-#### Don't assign `this` to a variable, use arrow functions or `.bind()` to avoid shadowing
+#### Don't assign `this` to a variable, use arrow functions or `.bind()` to avoid shadowing (`consistent-this`)
 
 ```js
 // ❌
@@ -235,7 +235,7 @@ const processedItems = items.map(function (item) {
 const processedItems = items.map((item) => this.processItem(item))
 ```
 
-#### Use strict mode in all files
+#### Use strict mode in all files (`strict`)
 
 Strict mode is automatically enabled in ES modules, so you only need `"use strict"` at the top of files that don't use `import` or `export`.
 
@@ -248,7 +248,7 @@ import greeting from "./greeting" // or if you don't have imports/exports, use "
 console.log(greeting)
 ```
 
-#### Use `===` and `!==` instead of `==` and `!=`
+#### Use `===` and `!==` instead of `==` and `!=` (`eqeqeq`)
 
 JavaScript's default comparison operators (`==` and `!=`) can compare different types of primitives, leading to confusion behavior and bugs from unexpected types and other coercion issues. It's better to explicitly use `===` and `!==`, which check to see if values are equivalent and of the same type.
 
@@ -260,7 +260,7 @@ nameOrId == 1
 nameOrId === 1
 ```
 
-#### Use `fetch` instead of `XMLHTTPRequest`
+#### Use `fetch` instead of `XMLHTTPRequest` (`no-restricted-globals`)
 
 `XMLHTTPRequest` is a fairly old API for making HTTP/AJAX requests in browsers. It relies on multiple events and callbacks, making it more difficult to learn and harder to reuse. `fetch` is a more modern alternative that's entirely based on Promises, and therefore has better data management and error handling (see above).
 
@@ -282,22 +282,22 @@ Some features have potentially dangerous or confusing usages and can be improved
 Some features are too dangerous or confusing to be worth using.
 
 - Avoid `eval()`, use other techniques to make code dynamic.
-- Avoid `continue`, use conditional statements inside blocks instead.
-- Avoid typed wrappers (Boolean/Number/String/Object/Array), use literals like `false`, `0`, `''`, `{}`, and `[]` instead.
-- Avoid `with`, manually read properties or use destructuring instead.
-- Avoid `void`, it's better to use `undefined` or break up multiple statements instead.
-- Avoid bitwise operators like `&` and `|`, they're usually confused with the `&&` and `||` (and/or) operators, and bitwise operations are not very performant or useful in JavaScript.
-- Avoid labels
+- Avoid `continue`, use conditional statements inside blocks instead. (`no-continue`)
+- Avoid typed wrappers (Boolean/Number/String/Object/Array), use literals like `false`, `0`, `''`, `{}`, and `[]` instead. (`no-new-wrappers`)
+- Avoid `with`, manually read properties or use destructuring instead. (`no-with`)
+- Avoid `void`, it's better to use `undefined` or break up multiple statements instead. (`no-void`)
+- Avoid bitwise operators like `&` and `|`, they're usually confused with the `&&` and `||` (and/or) operators, and bitwise operations are not very performant or useful in JavaScript. (`no-bitwise`)
+- Avoid labels (`no-labels`)
 
 ### Follow best practices
 
-- acessor-pairs Always define a getter for each setter
-- array-callback-return Return values in Array methods
-- class-methods-use-this Always use `this` in class methods
-- consistent-return
-- default-case Always provide a `default` in `case` as a fallback
-- dot notation Avoid using `[]` unnecessary when indexing
-- max-classes-per-file Use one class per file
+- Always define a getter for each setter (`accessor-pairs`)
+- Return values in Array methods (`array-callback-return`)
+- Always use `this` in class methods (`class-methods-use-this`)
+- Consistently return values (`consistent-return`)
+- Always provide a `default` in `case` as a fallback (`default-case`)
+- Avoid using `[]` unnecessary when indexing (`dot-notation`)
+- Use one class per file (`max-classes-per-file`)
 
 ## Inspiration
 

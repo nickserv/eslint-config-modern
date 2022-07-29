@@ -6,7 +6,7 @@ const { groupBy } = require("lodash")
 
 async function getDocumentedRules() {
   const markdown = await readFile("README.md", "utf8")
-  const headingMatches = markdown.matchAll(/^#.*\((?<rules>.*)\)$/gmu)
+  const headingMatches = markdown.matchAll(/\((?<rules>`.*`)\)$/gmu)
   return Array.from(headingMatches).flatMap(({ groups: { rules } }) => {
     const ruleMatches = rules.matchAll(/`(?<rule>[a-z-]+)`/gu)
     return Array.from(ruleMatches).map(({ groups: { rule } }) => rule)
