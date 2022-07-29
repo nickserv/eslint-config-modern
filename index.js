@@ -159,6 +159,10 @@ module.exports = {
         property: "then",
         message: "Please use async/await instead.",
       },
+      {
+        property: "catch",
+        message: "Please use async/await instead.",
+      },
     ],
     "no-restricted-syntax": [
       "error",
