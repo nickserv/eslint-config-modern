@@ -48,6 +48,12 @@ This config uses features from ES6/ES2015 to ES2019 which are supported in the f
 
 [Prettier](https://prettier.io/) is highly recommended to format your code. It is much more opinionated, powerful, and consistent than ESLint's formatting support. By using both, you can get better formatting from Prettier and still get advice of what features to use and potential errors in ESLint. Removing formatting from this style guide also makes it much simpler and more flexible, as you can use any settings you'd like in Prettier.
 
+While configuration is not required, it's recommended you enable support for ES2017 trailing commas:
+
+```json
+"trailingComma": "all"
+```
+
 ### Use new replacements of problematic features
 
 JavaScript has many problematic and difficult to understand syntax features that have been replaced by newer features. Migrating to new features can drastically improve the readability, safety, and consistency of JavaScript.
