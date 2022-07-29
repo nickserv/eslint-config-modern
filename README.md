@@ -6,39 +6,53 @@ ESLint configuration for modern JavaScript that improves code quality by removin
 
 You can install ESLint using npm or Yarn:
 
-    npm install eslint --save-dev
-    yarn add eslint --dev
+```
+npm install eslint --save-dev
+```
+
+```
+yarn add eslint --dev
+```
 
 Then install this configuration:
 
-    npm install eslint-config-modern --save-dev
-    yarn add eslint --dev
+```
+npm install eslint-config-modern --save-dev
+```
+
+```
+yarn add eslint-config-modern --dev
+```
 
 ## Usage
 
 In your `.eslintrc` file, add:
 
 ```json
-{
-  "extends": "modern"
-}
+"extends": "modern"
 ```
 
 ## Environment support
 
-### Browsers
+This config uses features from ES6/ES2015 to ES2019 which are supported in the following environments:
 
-This config uses features from ES6/ES2015 to ES2019 which are supported by Chrome, Firefox, and Safari. Legacy browsers like Internet Explorer require build tools like https://babeljs.io/docs/en/babel-preset-env.
-
-### Node
-
-It's assumed that you're using a supported version of Node (see [release schedule](https://github.com/nodejs/Release#release-schedule)).
+- Chrome
+- Firefox
+- Safari
+- Node.js 12.17.0+
+- TypeScript 2.7+
 
 ## Guidelines
 
 ### Consistently format code with Prettier
 
 [Prettier](https://prettier.io/) is highly recommended to format your code. It is much more opinionated, powerful, and consistent than ESLint's formatting support. By using both, you can get better formatting from Prettier and still get advice of what features to use and potential errors in ESLint. Removing formatting from this style guide also makes it much simpler and more flexible, as you can use any settings you'd like in Prettier.
+
+While configuration is not required, it's recommended you enable support for ES2017 trailing commas:
+
+```json
+"trailingComma": "all"
+```
 
 ### Use new replacements of problematic features
 
@@ -50,30 +64,30 @@ JavaScript has many problematic and difficult to understand syntax features that
 // ❌
 function Animal() {}
 Animal.prototype.speak = function () {
-  return this;
-};
+  return this
+}
 
 // ✅
 class Animal {
   speak() {
-    return this;
+    return this
   }
 }
 ```
 
-#### Replace globals with ES/CJS modules
+#### Replace globals and CJS modules with ES modules
 
-The ES module standard makes it easy to safely reuse JavaScript code across files without leaking into the global scope, and enables useful tooling features like tree shaking and loaders. CJS modules can also be used with Node, though they're not as analyzable and flexible with build tools.
+The ES module standard makes it easy to safely reuse JavaScript code across files without leaking into the global scope, and enables useful tooling features like tree shaking and loaders.
 
 ```js
-// ❌
-window.greeting = "Hello, world!";
+// ❌ globals
+window.greeting = "Hello, world!"
+
+// ❌ CJS
+exports.greeting = "Hello, world!"
 
 // ✅ ES
-export const greeting = "Hello, world!";
-
-// ✅ CJS
-exports.greeting = "Hello, world!";
+export const greeting = "Hello, world!"
 ```
 
 #### Replace `var` with `let`/`const` (`no-const-assign`, `no-var`, `prefer-const`)
@@ -82,14 +96,14 @@ Variables created with `var` are hoisted to the nearest function, which can caus
 
 ```js
 // ❌
-var greeting = "Hello, world!";
-var enabled = true;
-enabled = false;
+var greeting = "Hello, world!"
+var enabled = true
+enabled = false
 
 // ✅
-const greeting = "Hello, world!";
-let enabled = true;
-enabled = false;
+const greeting = "Hello, world!"
+let enabled = true
+enabled = false
 ```
 
 #### Use iteration with `for`
@@ -99,12 +113,12 @@ C-style `for` loops are often unnecessarily complicated and error prone for basi
 ```js
 // ❌
 for (const i = 0; i < array.length; i++) {
-  console.log(array[i]);
+  console.log(array[i])
 }
 
 // ✅
 for (const value of array) {
-  console.log(value);
+  console.log(value)
 }
 ```
 
@@ -126,12 +140,12 @@ for (const value of array)
 
 ```js
 // ❌
-const name = "world";
-console.log("Hello, " + name + "!");
+const name = "world"
+console.log("Hello, " + name + "!")
 
 // ✅
-const name = "world";
-console.log(`Hello, ${name}!`);
+const name = "world"
+console.log(`Hello, ${name}!`)
 ```
 
 #### Replace the `arguments` keyword with spread arguments
@@ -141,12 +155,12 @@ console.log(`Hello, ${name}!`);
 ```js
 // ❌
 function joinWords() {
-  return Array.from(arguments).join(" ");
+  return Array.from(arguments).join(" ")
 }
 
 // ✅
 function joinWords(...args) {
-  return args.join(" ");
+  return args.join(" ")
 }
 ```
 
@@ -182,16 +196,16 @@ async function getFirstResult() {
 function getExample() {
   return fetch("https://example.com")
     .then((response) => response.text())
-    .catch((error) => console.error(error));
+    .catch((error) => console.error(error))
 }
 
 // ✅
 async function getExample() {
   try {
-    const response = await fetch("https://example.com");
-    return response.text();
+    const response = await fetch("https://example.com")
+    return response.text()
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
 }
 ```
@@ -202,23 +216,23 @@ Modern JavaScript specs require the radix/base of integer parsing to always be 1
 
 ```js
 // ❌
-const integer = parseInt(string, 10);
+const integer = parseInt(string, 10)
 
 // ✅
-const integer = parseInt(string);
+const integer = parseInt(string)
 ```
 
 #### Don't assign `this` to a variable, use arrow functions or `.bind()` to avoid shadowing
 
 ```js
 // ❌
-const that = this;
+const that = this
 const processedItems = items.map(function (item) {
-  return that.processItem(item);
-});
+  return that.processItem(item)
+})
 
 // ✅
-const processedItems = items.map((item) => this.processItem(item));
+const processedItems = items.map((item) => this.processItem(item))
 ```
 
 #### Use strict mode in all files
@@ -227,11 +241,11 @@ Strict mode is automatically enabled in ES modules, so you only need `"use stric
 
 ```js
 // ❌
-console.log("Hello, world!");
+console.log("Hello, world!")
 
 // ✅ file
-import greeting from "./greeting"; // or if you don't have imports/exports, use "use-strict" on the first line
-console.log(greeting);
+import greeting from "./greeting" // or if you don't have imports/exports, use "use-strict" on the first line
+console.log(greeting)
 ```
 
 #### Use `===` and `!==` instead of `==` and `!=`
@@ -240,17 +254,17 @@ JavaScript's default comparison operators (`==` and `!=`) can compare different 
 
 ```js
 // ❌
-nameOrId == 1;
+nameOrId == 1
 
 // ✅
-nameOrId === 1;
+nameOrId === 1
 ```
 
 #### Use `fetch` instead of `XMLHTTPRequest`
 
 `XMLHTTPRequest` is a fairly old API for making HTTP/AJAX requests in browsers. It relies on multiple events and callbacks, making it more difficult to learn and harder to reuse. `fetch` is a more modern alternative that's entirely based on Promises, and therefore has better data management and error handling (see above).
 
-If you're using Node instead of a browser, we recommend `node-fetch` as Node's built in HTTP client is also fairly complex. If you have isomorphic code that runs both in Node and a browser, you can use `isomorphic-fetch` to switch between the two automatically.
+If you're using Node 18+, you can use `fetch` globally. If not, we recommend `undici` as Node's legacy HTTP client is also fairly complex.
 
 ### Improve semantics
 

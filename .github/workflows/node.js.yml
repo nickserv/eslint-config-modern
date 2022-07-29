@@ -1,0 +1,31 @@
+name: Node.js CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: test (Node ${{ matrix.node-version }}, ESLint ${{ matrix.eslint-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12, 14, 16, 18]
+        eslint-version: [6, 7, 8]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
+      - run: yarn --frozen-lockfile
+      - run: yarn add --dev eslint@${{ matrix.eslint-version }}
+      - run: yarn test
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: yarn
+      - run: yarn --frozen-lockfile
+      - run: yarn prettier --check .

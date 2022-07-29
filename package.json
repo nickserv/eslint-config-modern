@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-modern",
-  "version": "0.6.0",
+  "version": "0.7.1",
   "author": "Nick McCurdy <nick@nickmccurdy.com> (https://nickmccurdy.com/)",
   "license": "ISC",
   "description": "ESLint configuration for modern JavaScript that improves code quality by removing bad features and preventing anti-patterns",
@@ -14,7 +14,9 @@
   },
   "devDependencies": {
     "eslint": "6.2.0",
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.19",
+    "prettier": "^2.7.1",
+    "prettier-config-nick": "^1.0.2"
   },
   "peerDependencies": {
     "eslint": ">= 6.2.0"
@@ -24,11 +26,11 @@
     "env": {
       "node": true
     },
+    "parserOptions": {
+      "sourceType": "script"
+    },
     "rules": {
       "sort-keys": "error"
     }
-  },
-  "prettier": {
-    "quoteProps": "consistent"
   }
 }

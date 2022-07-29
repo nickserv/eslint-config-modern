@@ -1,8 +1,8 @@
-"use strict";
+"use strict"
 
 module.exports = {
   env: { es2017: true },
-  parserOptions: { ecmaVersion: 10 },
+  parserOptions: { ecmaVersion: 10, sourceType: "module" },
   rules: {
     "accessor-pairs": "error",
     "array-callback-return": "error",
@@ -51,7 +51,6 @@ module.exports = {
     "no-dupe-keys": "error",
     "no-duplicate-case": "error",
     "no-duplicate-imports": "error",
-    "no-else-return": ["error", { allowElseIf: false }],
     "no-empty": "error",
     "no-empty-character-class": "error",
     "no-empty-function": "error",
@@ -78,10 +77,6 @@ module.exports = {
     "no-lone-blocks": "error",
     "no-lonely-if": "error",
     "no-loop-func": "error",
-    "no-magic-numbers": [
-      "error",
-      { enforceConst: true, ignoreArrayIndexes: true },
-    ],
     "no-misleading-character-class": "error",
     "no-multi-assign": "error",
     "no-multi-str": "error",
@@ -190,7 +185,7 @@ module.exports = {
     "no-self-assign": "error",
     "no-self-compare": "error",
     "no-sequences": "error",
-    "no-shadow": ["error", { builtinGlobals: true, hoist: "all" }],
+    "no-shadow": ["error", { hoist: "all" }],
     "no-shadow-restricted-names": "error",
     "no-sparse-arrays": "error",
     "no-sync": "error",
@@ -212,7 +207,7 @@ module.exports = {
     "no-unused-labels": "error",
     "no-unused-vars": [
       "error",
-      { args: "all", caughtErrors: "all", ignoreRestSiblings: true },
+      { args: "after-used", caughtErrors: "all", ignoreRestSiblings: true },
     ],
     "no-use-before-define": "error",
     "no-useless-call": "error",
@@ -256,4 +251,4 @@ module.exports = {
     "vars-on-top": "error",
     "yoda": "error",
   },
-};
+}
