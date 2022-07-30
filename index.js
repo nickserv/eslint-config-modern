@@ -1,8 +1,13 @@
 "use strict"
 
 module.exports = {
-  env: { es2017: true },
-  parserOptions: { ecmaVersion: 10, sourceType: "module" },
+  env: {
+    es2017: true,
+  },
+  parserOptions: {
+    ecmaVersion: 10,
+    sourceType: "module",
+  },
   rules: {
     "accessor-pairs": "error",
     "array-callback-return": "error",
@@ -18,7 +23,10 @@ module.exports = {
     "for-direction": "error",
     "func-name-matching": [
       "error",
-      { considerPropertyDescriptor: true, includeCommonJSModuleExports: true },
+      {
+        considerPropertyDescriptor: true,
+        includeCommonJSModuleExports: true,
+      },
     ],
     "func-names": "error",
     "getter-return": "error",
@@ -90,7 +98,12 @@ module.exports = {
     "no-obj-calls": "error",
     "no-octal": "error",
     "no-octal-escape": "error",
-    "no-param-reassign": ["error", { props: true }],
+    "no-param-reassign": [
+      "error",
+      {
+        props: true,
+      },
+    ],
     "no-path-concat": "error",
     "no-process-exit": "error",
     "no-proto": "error",
@@ -189,29 +202,56 @@ module.exports = {
     "no-self-assign": "error",
     "no-self-compare": "error",
     "no-sequences": "error",
-    "no-shadow": ["error", { hoist: "all" }],
+    "no-shadow": [
+      "error",
+      {
+        hoist: "all",
+      },
+    ],
     "no-shadow-restricted-names": "error",
     "no-sparse-arrays": "error",
     "no-sync": "error",
     "no-template-curly-in-string": "error",
     "no-this-before-super": "error",
     "no-throw-literal": "error",
-    "no-undef": ["error", { typeof: true }],
+    "no-undef": [
+      "error",
+      {
+        typeof: true,
+      },
+    ],
     "no-undef-init": "error",
-    "no-underscore-dangle": ["error", { enforceInMethodNames: true }],
+    "no-underscore-dangle": [
+      "error",
+      {
+        enforceInMethodNames: true,
+      },
+    ],
     "no-unmodified-loop-condition": "error",
-    "no-unneeded-ternary": ["error", { defaultAssignment: false }],
+    "no-unneeded-ternary": [
+      "error",
+      {
+        defaultAssignment: false,
+      },
+    ],
     "no-unreachable": "error",
     "no-unsafe-finally": "error",
     "no-unsafe-negation": "error",
     "no-unused-expressions": [
       "error",
-      { allowShortCircuit: true, allowTernary: true },
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+      },
     ],
     "no-unused-labels": "error",
     "no-unused-vars": [
       "error",
-      { args: "after-used", caughtErrors: "all", ignoreRestSiblings: true },
+      {
+        args: "after-used",
+        caughtErrors: "all",
+        ignoreRestSiblings: true,
+      },
     ],
     "no-use-before-define": "error",
     "no-useless-call": "error",
@@ -229,12 +269,19 @@ module.exports = {
     "object-shorthand": [
       "error",
       "always",
-      { avoidExplicitReturnArrows: true },
+      {
+        avoidExplicitReturnArrows: true,
+      },
     ],
     "one-var": ["error", "never"],
     "operator-assignment": "error",
     "prefer-arrow-callback": "error",
-    "prefer-const": ["error", { ignoreReadBeforeAssign: true }],
+    "prefer-const": [
+      "error",
+      {
+        ignoreReadBeforeAssign: true,
+      },
+    ],
     "prefer-destructuring": "error",
     "prefer-named-capture-group": "error",
     "prefer-numeric-literals": "error",
@@ -251,7 +298,12 @@ module.exports = {
     "strict": "error",
     "symbol-description": "error",
     "use-isnan": "error",
-    "valid-typeof": ["error", { requireStringLiterals: true }],
+    "valid-typeof": [
+      "error",
+      {
+        requireStringLiterals: true,
+      },
+    ],
     "vars-on-top": "error",
     "yoda": "error",
   },
