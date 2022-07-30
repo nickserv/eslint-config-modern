@@ -4,32 +4,28 @@ const { Linter } = require("eslint")
 const { readFile } = require("fs/promises")
 const { groupBy } = require("lodash")
 
-async function getDocumentedRules() {
+;(async () => {
   const markdown = await readFile("README.md", "utf8")
   const headingMatches = markdown.matchAll(/\((?<rules>`.*`)\)$/gmu)
-  return Array.from(headingMatches).flatMap(({ groups: { rules } }) => {
-    const ruleMatches = rules.matchAll(/`(?<rule>[a-z-]+)`/gu)
-    return Array.from(ruleMatches).map(({ groups: { rule } }) => rule)
-  })
-}
+  const documentedRules = Array.from(headingMatches).flatMap(
+    ({ groups: { rules } }) => {
+      const ruleMatches = rules.matchAll(/`(?<rule>[a-z-]+)`/gu)
+      return Array.from(ruleMatches).map(({ groups: { rule } }) => rule)
+    },
+  )
 
-function getRulesByCategory() {
   const allRules = new Linter().getRules()
-  return groupBy(
+  const rulesByCategory = groupBy(
     Object.keys(config.rules),
     (rule) => allRules.get(rule).meta.docs.category,
   )
-}
-
-;(async () => {
-  const documentedRules = await getDocumentedRules()
 
   function countDocumentedRules(rules) {
     return rules.filter((rule) => documentedRules.includes(rule)).length
   }
 
   console.log(
-    Object.entries(getRulesByCategory())
+    Object.entries(rulesByCategory)
       .map(([category, categoryRules]) =>
         [
           `${category} (${countDocumentedRules(categoryRules)}/${
