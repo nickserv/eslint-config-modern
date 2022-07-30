@@ -36,7 +36,7 @@ function getRulesByCategory() {
             categoryRules.length
           })`,
           ...categoryRules.map(
-            (rule) => `${documentedRules.includes(rule) ? "✓" : "✖"} ${rule}`,
+            (rule) => `${documentedRules.includes(rule) ? "✅" : "❌"} ${rule}`,
           ),
         ].join("\n"),
       )
