@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-modern",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "author": "Nick McCurdy <nick@nickmccurdy.com> (https://nickmccurdy.com/)",
   "license": "ISC",
   "description": "ESLint configuration for modern JavaScript that improves code quality by removing bad features and preventing anti-patterns",
@@ -23,22 +23,5 @@
   },
   "peerDependencies": {
     "eslint": ">= 6.2.0"
-  },
-  "eslintConfig": {
-    "extends": ".",
-    "env": {
-      "node": true
-    },
-    "parserOptions": {
-      "sourceType": "script"
-    },
-    "overrides": [
-      {
-        "files": "index.js",
-        "rules": {
-          "sort-keys": "error"
-        }
-      }
-    ]
   }
 }
