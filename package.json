@@ -19,17 +19,5 @@
   },
   "peerDependencies": {
     "eslint": ">= 6.2.0"
-  },
-  "eslintConfig": {
-    "extends": ".",
-    "env": {
-      "node": true
-    },
-    "parserOptions": {
-      "sourceType": "script"
-    },
-    "rules": {
-      "sort-keys": "error"
-    }
   }
 }
