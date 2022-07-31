@@ -1,3 +1,4 @@
+/* eslint sort-keys: error */
 "use strict"
 
 module.exports = {
