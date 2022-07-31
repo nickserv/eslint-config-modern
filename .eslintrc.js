@@ -8,7 +8,12 @@ module.exports = {
   parserOptions: {
     sourceType: "script",
   },
-  rules: {
-    "sort-keys": "error",
-  },
+  overrides: [
+    {
+      files: "index.js",
+      rules: {
+        "sort-keys": "error",
+      },
+    },
+  ],
 }
