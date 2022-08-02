@@ -11,13 +11,11 @@
   "repository": "nickmccurdy/eslint-config-modern",
   "scripts": {
     "test": "eslint .",
-    "categories": "node categories",
-    "difference": "node difference"
+    "categories": "node categories"
   },
   "devDependencies": {
     "eslint": "~6.2.0",
     "eslint-config-prettier": "^6.11.0",
-    "lodash": "^4.17.19",
     "prettier": "^2.7.1",
     "prettier-config-nick": "^1.0.2"
   },
