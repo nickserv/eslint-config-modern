@@ -1,5 +1,5 @@
 "use strict"
-const config = require(".")
+const { rules } = require(".")
 const { Linter } = require("eslint")
 const prettier = require("eslint-config-prettier")
 const { readFile } = require("fs/promises")
@@ -25,7 +25,7 @@ const { readFile } = require("fs/promises")
               ? "Prettier"
               : documentedRules.includes(rule)
               ? "Documented"
-              : rule in config.rules
+              : rule in rules
               ? "Implemented"
               : "To-do",
           docs: `https://eslint.org/docs/latest/rules/${rule}`,
