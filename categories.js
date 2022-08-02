@@ -5,6 +5,12 @@ const prettier = require("eslint-config-prettier")
 const { readFile } = require("fs/promises")
 
 ;(async () => {
+  const allRules = new Linter().getRules()
+
+  const prettierRules = Object.entries(prettier.rules)
+    .filter(([, value]) => value === "off")
+    .map(([key]) => key)
+
   const markdown = await readFile("README.md", "utf8")
   const headingMatches = markdown.matchAll(/\((?<rules>`.*`)\)$/gmu)
   const documentedRules = Array.from(headingMatches).flatMap(
@@ -14,11 +20,7 @@ const { readFile } = require("fs/promises")
     },
   )
 
-  const allRules = new Linter().getRules()
-
-  const prettierRules = Object.entries(prettier.rules)
-    .filter(([, value]) => value === "off")
-    .map(([key]) => key)
+  const rules = Object.keys(config.rules)
 
   console.table(
     Object.fromEntries(
@@ -30,7 +32,7 @@ const { readFile } = require("fs/promises")
             ? "Prettier"
             : documentedRules.includes(rule)
             ? "Documented"
-            : rule in config.rules
+            : rules.includes(rule)
             ? "Implemented"
             : "To-do",
           docs: `https://eslint.org/docs/latest/rules/${rule}`,
