@@ -22,19 +22,20 @@ const { readFile } = require("fs/promises")
 
   console.table(
     Object.fromEntries(
-      Array.from(allRules.entries()).map(([rule, { meta }]) => {
-        const { category } = meta.docs
-        let status = "To-do"
-        if (prettierRules.includes(rule)) {
-          status = "Prettier"
-        } else if (documentedRules.includes(rule)) {
-          status = "Documented"
-        } else if (rule in config.rules) {
-          status = "Implemented"
-        }
-        const docs = `https://eslint.org/docs/latest/rules/${rule}`
-        return [rule, { category, status, docs }]
-      }),
+      Array.from(allRules.entries()).map(([rule, { meta }]) => [
+        rule,
+        {
+          category: meta.docs.category,
+          status: prettierRules.includes(rule)
+            ? "Prettier"
+            : documentedRules.includes(rule)
+            ? "Documented"
+            : rule in config.rules
+            ? "Implemented"
+            : "To-do",
+          docs: `https://eslint.org/docs/latest/rules/${rule}`,
+        },
+      ]),
     ),
   )
 })()
