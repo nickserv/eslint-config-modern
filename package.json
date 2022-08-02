@@ -11,7 +11,7 @@
   "repository": "nickmccurdy/eslint-config-modern",
   "scripts": {
     "test": "eslint .",
-    "categories": "node categories"
+    "rules": "node rules"
   },
   "devDependencies": {
     "eslint": "~6.2.0",
