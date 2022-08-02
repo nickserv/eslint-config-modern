@@ -15,7 +15,7 @@
     "difference": "node difference"
   },
   "devDependencies": {
-    "eslint": "6.2.0",
+    "eslint": "~6.2.0",
     "eslint-config-prettier": "^6.11.0",
     "lodash": "^4.17.19",
     "prettier": "^2.7.1",
