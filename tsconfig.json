@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": false,
+    "noEmit": true,
+    "checkJs": true,
+    "skipLibCheck": true
+  }
+}
