@@ -13,6 +13,16 @@ jobs:
       - run: yarn --frozen-lockfile
       - run: yarn prettier --check .
 
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: yarn
+      - run: yarn --frozen-lockfile
+      - run: yarn tsc
+
   test:
     name: test (Node ${{ matrix.node-version }}, ESLint ${{ matrix.eslint-version }})
     runs-on: ubuntu-latest

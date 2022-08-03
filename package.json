@@ -10,7 +10,7 @@
   ],
   "repository": "nickmccurdy/eslint-config-modern",
   "scripts": {
-    "test": "eslint . && tsc",
+    "test": "eslint .",
     "rules": "node rules"
   },
   "devDependencies": {
