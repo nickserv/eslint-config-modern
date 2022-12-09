@@ -588,9 +588,9 @@ prelude-ls@~1.1.2:
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
 
 prettier-config-nick@^1.0.2:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/prettier-config-nick/-/prettier-config-nick-1.0.3.tgz#dfeb2cea46da29874e0f422688b874e02ab73fe5"
-  integrity sha512-dPBi7WqH60NRbK3W69IHjQ9W4XMXMrXuFcqgbr+Pnw5Veuy+eagbc70LyqOqHHiBSigDk3gBR90gsUM+9plWJg==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/prettier-config-nick/-/prettier-config-nick-1.0.7.tgz#865c666f143be5830f3442145ff2695f4e10f49b"
+  integrity sha512-VtpBK5Uz0LaUpMe8nYep/RsT648GSCP52TbeiYc91MVsa/8zoNeZ0Zfky34OPG8Z9jFhNpoLgHnOXhUc7+rMCA==
 
 prettier@^2.7.1:
   version "2.7.1"
