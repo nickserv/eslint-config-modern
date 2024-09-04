@@ -10,10 +10,14 @@
   ],
   "repository": "nickmccurdy/eslint-config-modern",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "rules": "node rules"
   },
   "devDependencies": {
+    "@notionhq/client": "^2.1.1",
+    "dotenv": "^16.0.1",
     "eslint": "~6.2.0",
+    "eslint-config-prettier": "^6.11.0",
     "prettier": "^2.7.1",
     "prettier-config-nick": "^1.0.2"
   },
